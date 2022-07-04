@@ -7,6 +7,7 @@
     --clr-neutral-white: rgba(246, 242, 233, 1);
     --clr-neutral-black: rgba(25, 25, 25, 1);
     --clr-neutral-grey: rgba(88, 89, 90, 1);
+    --clr-neutral-grey-transparent: rgba(88, 89, 90, 0.4);
 
     --fontfamily-primary: 'Roboto Mono', Arial, Helvetica, sans-serif;
 
@@ -180,6 +181,10 @@ body {
     color: var(--clr-secondary);
 }
 
+.card-shadow {
+    box-shadow: 2px 2px 6px 3px var(--clr-neutral-grey-transparent);
+}
+
 /* BLOCKS: component specific rules */
 .card-shape {
     padding: 2rem;
@@ -253,4 +258,4 @@ body {
         padding-left: 2em;
         padding-right: 2em;
     }
-}
+} 
