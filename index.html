@@ -11,6 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> 
 
     <!-- my css -->
     <link rel="stylesheet" href="./stylesheets/style.css">
@@ -27,7 +30,16 @@ Logical choice to make things look more organized, but they are not fundamental 
 
     <main>
         <div class="grid">
-            <p class="[ grid_card ] [ card-shape grid-row-span-3 ] [ background-secondary text-color-dark ]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat architecto est, consequatur soluta repellendus ipsa cum illo iure qui. Omnis laudantium delectus fugiat reiciendis totam.</p>
+            <nav class="[ grid_card ] [ card-shape navigation-bar grid-row-span-3 ] [ background-dark text-color-light ]">
+                <ul class="[ navigation-bar__list ]">
+                    <li><a class="navigation-bar__list__element" href="#">Home</a></li>
+                    <li><a class="navigation-bar__list__element" href="#">About Me</a></li>
+                    <li><a class="navigation-bar__list__element" href="#">Projects</a></li>
+                    <li><a class="navigation-bar__list__element" href="#">Future</a></li>
+                    <li><a class="navigation-bar__list__element" href="#">Socials</a></li>
+                </ul>
+            </nav>
+            <p class="[ grid_card ] [ card-shape card-primary grid-row-span-3 ] [ background-secondary text-color-dark ]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat architecto est, consequatur soluta repellendus ipsa cum illo iure qui. Omnis laudantium delectus fugiat reiciendis totam.</p>
             <p class="[ grid_card ] [ card-shape ] [ background-dark text-color-light ]">Fugit reiciendis nihil similique ab maxime molestiae. Dolor dolore, saepe dicta ipsum debitis voluptates eveniet, esse quae facilis reprehenderit, veniam placeat facere. Harum, placeat ratione.</p>
             <p class="[ grid_card ] [ card-shape ] [ background-dark text-color-light ]">Commodi illo perspiciatis explicabo tenetur? Aut id repellendus ratione rerum labore aliquam est, nesciunt quo deleniti porro minus cum iusto ad, impedit tempore laudantium ullam!</p>
             <p class="[ grid_card ] [ card-shape ] [ background-neutral text-color-dark ]">Quia voluptate qui fugit ea ducimus eius, quaerat enim. Tempora quos alias optio totam perspiciatis ullam, nobis harum esse iusto vel! Ipsum nesciunt cupiditate praesentium!</p>

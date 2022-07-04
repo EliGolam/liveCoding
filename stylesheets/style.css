@@ -8,7 +8,7 @@
     --clr-neutral-black: rgba(25, 25, 25, 1);
     --clr-neutral-grey: rgba(88, 89, 90, 1);
 
-    --fontfamily-primary: Arial, Helvetica, sans-serif;
+    --fontfamily-primary: 'Roboto Mono', Arial, Helvetica, sans-serif;
 
     --fontweight-thin: 200;
     --fontweight-normal: 400;
@@ -29,6 +29,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 /* Remove default margin */
@@ -106,6 +107,8 @@ select {
 body {
     padding: 4em;
     max-width: max-content;
+    font-family: var(--fontfamily-primary);
+    min-width: fit-content;
 }
 
 /* Component Layout choices */
@@ -117,7 +120,7 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 0.1fr repeat(2, 1fr);
     gap: var(--gap, 1.5rem);
 
     padding-top: var(--flow-spacer, 1em);
@@ -125,6 +128,10 @@ body {
 
 .grid_card {
     max-width: 45ch;
+}
+
+.flow > * + * {
+    margin-top: var(--flow-spacer, 1em);
 }
 
 /* UTILITIES: One job, done well. It performs one logical job: formatting, design, shape, font and element colours  */
@@ -185,14 +192,62 @@ body {
     color: var(--clr-neutral-black);
 }
 
+.navigation-bar__list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+}
+
+.navigation-bar__list__element {
+    color: var(--clr-neutral-white);
+}
+
 /* EXCEPTIONS: variations to a block */
 .grid-row-span-3 {
     grid-row: 1 / span 3;
 }
 
+.card-primary {
+    grid-column-start: 2;
+}
+
+.navigation-bar {
+    grid-column-start: 1;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width:700px) {
+    body {
+        padding: 2em;
+    }
+
     .grid {
         grid-template-columns: 1fr;
     }
+
+    .grid-row-span-3 {
+        grid-row: 1;
+    }
+
+    .card-primary {
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+    
+    .navigation-bar {
+        grid-row-start: 1;
+    }
+    
+    .navigation-bar__list {
+        flex-direction: row;
+        gap: var(--gap);
+
+        white-space: nowrap;
+    }
+
+    .navigation-bar__list__element {
+        color: var(--clr-neutral-white);
+        font-size: var(--fontsize-small);
+    }    
 }
