@@ -217,11 +217,7 @@ body {
 }
 
 /* MEDIA QUERIES */
-@media screen and (max-width:700px) {
-    body {
-        padding: 2em;
-    }
-
+@media screen and (max-width:800px) {
     .grid {
         grid-template-columns: 1fr;
     }
@@ -250,4 +246,11 @@ body {
         color: var(--clr-neutral-white);
         font-size: var(--fontsize-small);
     }    
+}
+
+@media screen and (max-width:700px) {
+    body {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
 }
