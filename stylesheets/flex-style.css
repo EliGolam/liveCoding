@@ -1,0 +1,208 @@
+/* Root pseudoclass custom properties: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
+:root {
+    /* Website Color Scheme */
+    --clr-primary: rgba(87, 242, 178, 1);
+    --clr-secondary: rgba(250, 174, 95, 1);
+
+    --clr-neutral-white: rgba(246, 242, 233, 1);
+    --clr-neutral-black: rgba(25, 25, 25, 1);
+    --clr-neutral-grey: rgba(88, 89, 90, 1);
+    --clr-neutral-grey-transparent: rgba(88, 89, 90, 0.4);
+
+    --fontfamily-primary: 'Roboto Mono', Arial, Helvetica, sans-serif;
+
+    --fontweight-thin: 200;
+    --fontweight-normal: 400;
+    --fontweight-heavy: 700;
+
+    --fontsize-small: 0.7rem;
+    --fontsize-normal: 1.1rem;
+    --fontsize-large: 2rem;
+    --fontsize-title: 3rem;
+
+    --gap: 2rem;
+    --flow-spacer: 1em;
+}
+
+/* Andy Bell's CSS reset: https://piccalil.li/blog/a-modern-css-reset/ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default margin */
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* End of Andy Bell's CSS reset: EDITED */
+
+/* COMPOSITION: Macrolevel design choises that defines the skeleton of the webpage and basic composition within components */
+/* Page Layout choices */
+
+/* Component Layout choices */
+
+/* UTILITIES: One job, done well. It performs one logical job: formatting, design, shape, font and element colours  */
+/* Color schemes divided into scalable Design Tokens: allows to apply a specific set of colours without repetition */
+.background-primary {
+    background: var(--clr-primary);
+}
+
+.background-secondary {
+    background: var(--clr-secondary);
+}
+
+.background-dark {
+    background: var(--clr-neutral-black);
+}
+
+.background-neutral {
+    background: var(--clr-neutral-white);
+}
+
+.color-primary {
+    color: var(--clr-neutral-black);
+}
+
+.color-secondary { 
+    color: var(--clr-neutral-white);
+}
+
+.color-neutral {
+    color: var(--clr-neutral-grey);
+}
+
+.text-color-dark {
+    color: var(--clr-neutral-black);
+}
+
+.text-color-light{
+    color: var(--clr-neutral-white);
+}
+
+.text-color-primary {
+    color: var(--clr-primary);
+}
+
+.text-color-secondary {
+    color: var(--clr-secondary);
+}
+
+/* BLOCKS: component specific rules */
+.container-flex {
+  display: flex;
+  border: 5px dashed blue;
+  margin: 30px 0;
+}
+
+.flex-vertical {
+  flex-direction: column;
+}
+
+.flex-vertical-reverse {
+  flex-direction: column-reverse;
+}
+
+.justify-flex-right {
+  justify-content: flex-end;
+}
+
+.item {
+  max-width: 200px;
+  height: 200px;
+
+  border: 3px solid red;
+  margin: 2px 5px;
+}
+
+.inner-item {
+  max-width: 75px;
+  height: 50px;
+
+  border: 2px solid orange;
+}
+
+.card {
+  background-color: aquamarine;
+  margin: 0 5px;
+}
+
+.h-500 {
+  min-height: 500px;
+}
+
+.align-items-baseline {
+  align-items: baseline;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content { justify-content: center;}
+
+.flex-basis-200 > * { flex-basis: 200px;}
+
+.grow > * { flex-grow: 1;}
+
+.no-shrink > * {flex-shrink: 0;}
+
+.wrap { flex-wrap: wrap ;}
+/* EXCEPTIONS: variations to a block */
+
+/* MEDIA QUERIES */
