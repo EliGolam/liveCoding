@@ -2,11 +2,12 @@
 /* These are some generic design choices for colour schemes, fonts and backgrounds */
 :root {
     /* Website Color Scheme */
-    --clr-primary: rgba(87, 242, 178, 1);
-    --clr-secondary: rgba(250, 174, 95, 1);
+    --clr-primary: rgb(236, 46, 103);
+    --clr-secondary: rgb(0, 153, 224);
 
     --clr-neutral-white: rgba(246, 242, 233, 1);
     --clr-neutral-black: rgba(25, 25, 25, 1);
+    --clr-neutral-black-transparent: rgba(25, 25, 25, 0.94);
     --clr-neutral-grey: rgba(88, 89, 90, 1);
 
     --fontfamily-primary: Arial, Helvetica, sans-serif;
@@ -24,16 +25,90 @@
     --flow-spacer: 1em;
 }
 
+body {
+    font-family: Helvetica, Arial, Helvetica, sans-serif;
+}
+
 /* COMPOSITION: Macrolevel design choises that defines the skeleton of the webpage and basic composition within components */
 /* Page Layout choices */
+.flex { display: flex;}
+
+.header { 
+    text-align: center;
+    position: fixed;
+    display: block;
+    width: 100vw;
+    top: 0;
+    z-index: 2;
+
+    justify-content: space-between;
+}
+
+main {
+    padding: 5rem;
+    margin: 5rem auto;
+
+    align-items: center;
+}
+
+main p {
+    max-width: 70ch;
+
+}
+
+img {
+    width: 100%;
+}
+
+section {
+    row-gap: 20px;
+}
+
+.card {
+    padding: 10px;
+    margin: 0px 20px;
+    flex-shrink: 0;
+    width: calc(100% / 3 - 40px);
+
+    border: 3px solid grey;
+    border-radius: 20px;
+
+    position: relative;
+
+    
+    background-color: grey;
+}
+
+.heart {
+    color: black;
+    font-size: 20px;
+
+    position: absolute;
+        bottom: 10px;
+        right: 5px;
+
+    z-index: 1;
+}
+
+.card:hover .heart{
+    color: red;
+}
+
 
 /* Component Layout choices */
+.column { flex-flow: column wrap; row-gap: 0.5rem;}
+
+.row { flex-flow: row wrap; column-gap: 0.5rem;}
+
+.flex-wrap { flex-wrap: wrap;}
 
 /* UTILITIES: One job, done well. It performs one logical job: formatting, design, shape, font and element colours  */
 /* Color schemes divided into scalable Design Tokens: allows to apply a specific set of colours without repetition */
 .background-light { background-color: var(--clr-neutral-white); }
 
 .background-dark { background-color: var(--clr-neutral-black); }
+
+.background-dark-transparent { background-color: var(--clr-neutral-black-transparent); }
 
 .background-primary { background-color: var(--clr-primary);}
 
@@ -45,9 +120,10 @@
 
 /* BLOCKS: component specific rules */
 
+
 /* EXCEPTIONS: variations to a block */
 
 /* MEDIA QUERIES */
-@media screen and (max-width:700px) {
-  
+@media screen and (max-width: 950px) {
+
 }
