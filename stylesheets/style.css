@@ -1,106 +1,11 @@
 /* Root pseudoclass custom properties: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
 /* These are some generic design choices for colour schemes, fonts and backgrounds */
-:root {
-    /* Website Color Scheme */
-    --clr-primary: rgb(236, 46, 103);
-    --clr-secondary: rgb(0, 153, 224);
-
-    --clr-neutral-white: rgba(246, 242, 233, 1);
-    --clr-neutral-black: rgba(25, 25, 25, 1);
-    --clr-neutral-black-transparent: rgba(25, 25, 25, 0.94);
-    --clr-neutral-grey: rgba(88, 89, 90, 1);
-
-    --fontfamily-primary: Arial, Helvetica, sans-serif;
-
-    --fontweight-thin: 200;
-    --fontweight-normal: 400;
-    --fontweight-heavy: 700;
-
-    --fontsize-small: 0.7rem;
-    --fontsize-normal: 1.1rem;
-    --fontsize-large: 2rem;
-    --fontsize-title: 3rem;
-
-    --gap: 1rem;
-    --flow-spacer: 1em;
-}
-
 body {
-    font-family: Helvetica, Arial, Helvetica, sans-serif;
+    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
 }
-
-/* COMPOSITION: Macrolevel design choises that defines the skeleton of the webpage and basic composition within components */
-/* Page Layout choices */
-.flex { display: flex;}
-
-.header { 
-    text-align: center;
-    position: fixed;
-    display: block;
-    width: 100vw;
-    top: 0;
-    z-index: 2;
-
-    justify-content: space-between;
-}
-
-main {
-    padding: 5rem;
-    margin: 5rem auto;
-
-    align-items: center;
-}
-
-main p {
-    max-width: 70ch;
-
-}
-
-img {
-    width: 100%;
-}
-
-section {
-    row-gap: 20px;
-}
-
-.card {
-    padding: 10px;
-    margin: 0px 20px;
-    flex-shrink: 0;
-    width: calc(100% / 3 - 40px);
-
-    border: 3px solid grey;
-    border-radius: 20px;
-
-    position: relative;
-
-    
-    background-color: grey;
-}
-
-.heart {
-    color: black;
-    font-size: 20px;
-
-    position: absolute;
-        bottom: 10px;
-        right: 5px;
-
-    z-index: 1;
-}
-
-.card:hover .heart{
-    color: red;
-}
-
 
 /* Component Layout choices */
-.column { flex-flow: column wrap; row-gap: 0.5rem;}
 
-.row { flex-flow: row wrap; column-gap: 0.5rem;}
-
-.flex-wrap { flex-wrap: wrap;}
 
 /* UTILITIES: One job, done well. It performs one logical job: formatting, design, shape, font and element colours  */
 /* Color schemes divided into scalable Design Tokens: allows to apply a specific set of colours without repetition */
@@ -118,12 +23,68 @@ section {
 
 .text-colour-light {color: var(--clr-neutral-white);}
 
-/* BLOCKS: component specific rules */
-
-
-/* EXCEPTIONS: variations to a block */
-
-/* MEDIA QUERIES */
-@media screen and (max-width: 950px) {
-
+.m-s_bg-accent {
+    background-color: #2c3e50;
 }
+/*#region LIVE CODING */
+
+
+/*#region animations old  */
+
+/* .square {
+    width: 150px;
+    height: 150px;
+    background-color: var(--clr-primary);
+    transition: background-color .5s, width 5s 1s;
+}
+
+.square:hover {
+    background-color: var(--clr-secondary);
+    width: 100%;
+}
+
+.animate {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    z-index: 100;
+    animation: example 5s linear 3s;
+} */
+
+/* @keyframes example {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        background-color: yellow;
+        left: 100%;
+        top: 0px;
+    }
+
+    50% {
+        background-color: blue;
+        left: 100%;
+        top: 200px;
+    }
+
+    75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+    }
+
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+} */
+
+/*#endregion animations old  */

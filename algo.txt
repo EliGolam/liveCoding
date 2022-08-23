@@ -1,0 +1,16 @@
+// Problema/Situazione: Selezionare un CD di Jazz da ascoltare. 
+Create jazz_list
+
+Search through **CD collection**: 
+    - If CD tag is "Jazz" -> Add to jazz_list: 
+        * grab the cd and put it on a pile
+
+play each CD in jazz_list: 
+    * take the top CD from the pile
+    * take CD out of its case
+    * play
+
+        - if I don't like the album -> next CD in jazz_list
+        - if CD reaches the end: 
+            - if I liked it a lot -> loop again 
+            - otherwise go to next CD in jazz_list
