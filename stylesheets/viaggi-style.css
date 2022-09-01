@@ -1,0 +1,118 @@
+/* Root pseudoclass custom properties: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
+/* These are some generic design choices for colour schemes, fonts and backgrounds */
+:root {
+    /* Website Color Scheme */
+    --clr-primary: rgb(236, 46, 103);
+    --clr-secondary: rgb(0, 153, 224);
+
+    --clr-neutral-white: rgba(246, 242, 233, 1);
+    --clr-neutral-black: rgba(25, 25, 25, 1);
+    --clr-neutral-black-transparent: rgba(25, 25, 25, 0.94);
+    --clr-neutral-grey: rgba(88, 89, 90, 1);
+
+    --fontfamily-primary: Arial, Helvetica, sans-serif;
+
+    --fontweight-thin: 200;
+    --fontweight-normal: 400;
+    --fontweight-heavy: 700;
+
+    --fontsize-small: 0.7rem;
+    --fontsize-normal: 1.1rem;
+    --fontsize-large: 2rem;
+    --fontsize-title: 3rem;
+
+    --gap: 1rem;
+    --flow-spacer: 1rem;
+}
+
+body {
+    font-family: Helvetica, Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+/* MAIN BLOCKS */
+.foto { 
+    background-image: url(../images/800x400.png);
+    background-repeat: no-repeat;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    padding: .7rem 1rem;
+    z-index: 2;
+    text-align: center;
+}
+
+ul li a {
+    text-transform: uppercase;
+}
+
+main section {
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+
+    background-position: center;
+
+    position: relative;
+}
+
+main #roma > div {
+    position: absolute;
+        top: 50%;
+        left: 50%;
+    
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    color: var(--clr-neutral-black);
+}
+
+main #napoli > div {
+    margin: 0 auto;
+    width: 50%;
+    max-width: 65ch;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* Component Layout choices */
+.flex { display: flex;}
+
+.column { flex-flow: column wrap; row-gap: 0.5rem;}
+
+.row { flex-flow: row wrap; column-gap: 0.5rem;}
+
+.flex-wrap { flex-wrap: wrap;}
+
+.flow > * { padding-top: var(--flow-spacer);}
+
+/* UTILITIES: One job, done well. It performs one logical job: formatting, design, shape, font and element colours  */
+/* Color schemes divided into scalable Design Tokens: allows to apply a specific set of colours without repetition */
+.background-light { background-color: var(--clr-neutral-white); }
+
+.background-dark { background-color: var(--clr-neutral-black); }
+
+.background-dark-transparent { background-color: var(--clr-neutral-black-transparent); }
+
+.background-primary { background-color: var(--clr-primary);}
+
+.background-secondary { background-color: var(--clr-secondary);}
+
+.text-colour-dark {color: var(--clr-neutral-black);}
+
+.text-colour-light {color: var(--clr-neutral-white);}
+
+/* BLOCKS: component specific rules */
+
+
+/* EXCEPTIONS: variations to a block */
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 950px) {
+
+}

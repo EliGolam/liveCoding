@@ -1,0 +1,13 @@
+.number-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.number-form > label {
+    width: 100%;
+    text-align: center;
+}
+
+.number-form > *:not(:first-child) {
+    width: calc(100% / 2);
+}
