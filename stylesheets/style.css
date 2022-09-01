@@ -1,90 +1,49 @@
-/* Root pseudoclass custom properties: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
-/* These are some generic design choices for colour schemes, fonts and backgrounds */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;600&display=swap');
+
+:root {
+  --clr-neutral-dark: hsl(207, 19%, 5%);
+  --clr-neutral: hsl(0, 0%, 100%);
+  --clr-accent: hsl(142, 90%, 61%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  line-height: 1.5;
+  background: var(--clr-neutral-dark);
+  color: var(--clr-neutral);
+  font-family: 'IBM Plex Mono', monospace, sans-serif;
 }
 
-/* Component Layout choices */
-
-
-/* UTILITIES: One job, done well. It performs one logical job: formatting, design, shape, font and element colours  */
-/* Color schemes divided into scalable Design Tokens: allows to apply a specific set of colours without repetition */
-.background-light { background-color: var(--clr-neutral-white); }
-
-.background-dark { background-color: var(--clr-neutral-black); }
-
-.background-dark-transparent { background-color: var(--clr-neutral-black-transparent); }
-
-.background-primary { background-color: var(--clr-primary);}
-
-.background-secondary { background-color: var(--clr-secondary);}
-
-.text-colour-dark {color: var(--clr-neutral-black);}
-
-.text-colour-light {color: var(--clr-neutral-white);}
-
-.m-s_bg-accent {
-    background-color: #2c3e50;
-}
-/*#region LIVE CODING */
-
-
-/*#region animations old  */
-
-/* .square {
-    width: 150px;
-    height: 150px;
-    background-color: var(--clr-primary);
-    transition: background-color .5s, width 5s 1s;
+.container {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 75ch;
 }
 
-.square:hover {
-    background-color: var(--clr-secondary);
-    width: 100%;
+.result,
+.title {
+  text-align: center;
 }
 
-.animate {
-    width: 150px;
-    height: 150px;
+.square {
+    width: 100px;
+    min-height: 50px;
+    background-color: white;
+    color: black;
+}
+
+#odd {
     background-color: red;
-    position: absolute;
-    left: 0px;
-    top: 0px;
+}
 
-    z-index: 100;
-    animation: example 5s linear 3s;
-} */
-
-/* @keyframes example {
-    0% {
-        background-color: red;
-        left: 0px;
-        top: 0px;
-    }
-
-    25% {
-        background-color: yellow;
-        left: 100%;
-        top: 0px;
-    }
-
-    50% {
-        background-color: blue;
-        left: 100%;
-        top: 200px;
-    }
-
-    75% {
-        background-color: green;
-        left: 0px;
-        top: 200px;
-    }
-
-    100% {
-        background-color: red;
-        left: 0px;
-        top: 0px;
-    }
-} */
-
-/*#endregion animations old  */
+#even {
+    background-color: greenyellow;
+}
